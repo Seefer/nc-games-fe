@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
   return (
     <div className="header">
-      <h1>HEADER</h1>
+      <h1>Darren's Games API World</h1>
     </div>
   );
 }

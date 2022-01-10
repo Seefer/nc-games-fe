@@ -3,8 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Nav from "./components/NavBar";
-import GamesList from "./components/GamesList";
+import ReviewsList from "./components/ReviewsList";
 import Footer from "./components/Footer";
+import Review from "./components/Review";
+import CommentForm from "./components/CommentForm";
+
 function App() {
   return (
     <BrowserRouter>
@@ -12,8 +15,10 @@ function App() {
         <Header />
         <Nav />
         <Routes>
-          <Route path="/" element={<GamesList />} />
-          <Route path="/games" element={<GamesList />} />
+          <Route path="/" element={<ReviewsList />} />
+          <Route path="/reviews" element={<ReviewsList />} />
+          <Route path="/reviews/:review_id" element={<Review />} />
+          <Route path="reviews/:review_id/comments" element={<CommentForm />} />
         </Routes>
         <Footer />
       </div>

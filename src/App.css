@@ -3,8 +3,17 @@
   background-color: green;
 }
 .nav {
-  border: 1px solid;
+  display: flex;
+  flex: wrap;
   background-color: blue;
+}
+
+.nav > a {
+  color: white;
+  text-decoration: none;
+}
+.react-link-name {
+  padding: 0.5rem 0.8rem;
 }
 .games-list {
   border: 1px solid;

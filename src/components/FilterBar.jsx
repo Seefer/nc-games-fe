@@ -1,7 +1,7 @@
 import React from "react";
 
 function FilterBar() {
-  return <div>FILTER BAR</div>;
+  return <div className="filter-bar">FILTER BAR</div>;
 }
 
 export default FilterBar;
