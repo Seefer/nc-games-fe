@@ -1,7 +1,13 @@
 import React from "react";
 
 function FilterBar() {
-  return <div className="filter-bar">FILTER BAR</div>;
+  return (
+    <nav className="filter-bar">
+      <p>Sort By:</p>
+      <p>Order:</p>
+      <p>Filter:</p>
+    </nav>
+  );
 }
 
 export default FilterBar;

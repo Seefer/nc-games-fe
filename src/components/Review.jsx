@@ -1,11 +1,8 @@
 import React from "react";
+import ReviewCard from "./ReviewCard";
 
 function Review() {
-  return (
-    <div className="review">
-      <h1>A Review</h1>
-    </div>
-  );
+  return <div className="review"></div>;
 }
 
 export default Review;
