@@ -3,7 +3,9 @@ import React from "react";
 function ReviewCard({ review }) {
   return (
     <div className="review-card">
-      <p>{review.title}}</p>
+      <p>
+        <strong>{review.title}</strong>}
+      </p>
       <img
         className="review-img"
         alt="review"
