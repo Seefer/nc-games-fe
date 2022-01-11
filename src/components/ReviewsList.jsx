@@ -19,10 +19,10 @@ function ReviewsList() {
   }, []);
 
   return (
-    <div className="reviews-list">
+    <div className="">
       <FilterBar />
       <main className="main">
-        <h2>Reviews</h2>
+        <h2 className="text-center text-3xl font-bold">Reviews</h2>
         {reviews.map((review) => (
           <ReviewCard key={review.review_id} review={review} />
         ))}

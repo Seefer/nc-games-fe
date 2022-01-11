@@ -6,7 +6,6 @@ import Nav from "./components/NavBar";
 import ReviewsList from "./components/ReviewsList";
 import Footer from "./components/Footer";
 import Review from "./components/Review";
-import CommentForm from "./components/CommentForm";
 
 function App() {
   return (

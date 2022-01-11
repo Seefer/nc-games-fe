@@ -2,7 +2,7 @@ import React from "react";
 
 function ReviewCard({ review }) {
   return (
-    <div className="review-card">
+    <div className="bg-slate-500 m-2">
       <p>
         <strong>{review.title}</strong>}
       </p>
