@@ -20,7 +20,16 @@ export const getReviews = async (category) => {
 
 export const getReviewById = async (review_id) => {
   const result = await ncGamesAPI.get(`/reviews/${review_id}`);
+
+  // const result = await ncGamesAPI.get(`/reviews`, {
+  //   params: { review_id: { review_id } },
+  // });
   return result.data.review;
+};
+
+export const getCommentsById = async (review_id) => {
+  const result = await ncGamesAPI.get(`/reviews/${review_id}/comments`);
+  return result.data.comments;
 };
 
 export const getReviewsSortedBy = (sort) => {};
@@ -29,7 +38,6 @@ export const getReviewsSortedBy = (sort) => {};
 // TODO export const updateReviewVote = (increment, review_id) => {};
 
 // TODO export const getCategories = () => {};
-// TODO export const getCommentsById = (review_id) => {};
 // TODO export const postCommentById = (username, body, review_id) => {};
 // TODO export const updateCommentVote = (increment, comment_id) => {};
 // TODO export const deleteCommentById = (comment_id) => {};

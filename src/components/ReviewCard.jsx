@@ -1,20 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { formatDate } from "../utils/formatDate";
+import UserProfile from "./UserProfile";
 
 function ReviewCard({ review }) {
   return (
-    <div className="flex p-10 ">
-      <div className="max-w-md overflow-hidden rounded shadow-lg">
+    <div className="container">
+      <div className="m-6 bg-gray-200 rounded shadow-md ">
         <img
-          className="w-full"
+          className="w-full rounded-b-none rounded-t-md "
           src={`${review.review_img_url}`}
           alt={"review"}
         ></img>
         <div>
-          <p>|owner logo here|: {review.owner}</p>
+          <UserProfile user={review.owner} />
         </div>
         <div className="px-6 py-4">
-          <div className="mb-2 text-xl font-bold uppercase">{review.title}</div>
+          <div className="mb-0 text-xl font-bold uppercase">{review.title}</div>
+          <p className="mt-0 mb-2 font-semibold ">
+            Posted On: {formatDate(review.created_at)}
+          </p>
           <p className="text-base text-gray-700">
             {`${review.review_body.slice(0, 150)}`}
             <strong>
