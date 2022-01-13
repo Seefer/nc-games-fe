@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -6,8 +7,13 @@ function Header() {
       <h1 className="text-xl font-bold text-gray-300 justify-start ">
         Darren's Games API World
       </h1>
-      <span className="text-xl font-bold text-gray-300 justify-start ">
-        Log in | Sign Up
+      <span>
+        <Link
+          className="text-xl font-bold text-gray-300 hover:text-gray-400 justify-end"
+          to="#"
+        >
+          Log In
+        </Link>
       </span>
     </div>
   );

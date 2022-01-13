@@ -3,7 +3,7 @@ import React from "react";
 function Comments() {
   return (
     <div className="comments">
-      <h1>Comments</h1>
+      <p className="mt-2 font-bold uppercase">Comments</p>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <nav className="bg-slate-700">
+    <nav className="bg-slate-700 pt-2 pb-2">
       <ul className="flex">
         <li className="mr-6">
           <Link className="text-white hover:text-gray-400" to="/">
@@ -18,6 +18,11 @@ function NavBar() {
         <li className="mr-6">
           <Link className="text-white hover:text-gray-400" to="/reviews">
             Users
+          </Link>
+        </li>
+        <li className="mr-6">
+          <Link className="text-white hover:text-gray-400" to="/reviews">
+            About
           </Link>
         </li>
       </ul>

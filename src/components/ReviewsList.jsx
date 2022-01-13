@@ -7,10 +7,13 @@ import ReviewCard from "./ReviewCard";
 
 function ReviewsList() {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getReviews()
       .then((result) => {
+        setIsLoading(false);
         setReviews(result);
       })
       .catch((err) => {
@@ -19,10 +22,9 @@ function ReviewsList() {
   }, []);
 
   return (
-    <div className="">
-      <FilterBar />
-      <main className="main">
-        <h2 className="text-center text-3xl font-bold">Reviews</h2>
+    <div className="flex">
+      <main className="bg-slate-300">
+        <h2 className="text-3xl font-bold text-center">Reviews</h2>
         {reviews.map((review) => (
           <ReviewCard key={review.review_id} review={review} />
         ))}
