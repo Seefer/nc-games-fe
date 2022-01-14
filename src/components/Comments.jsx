@@ -13,7 +13,6 @@ function Comments({ comment_count }) {
     setIsLoading(true);
     getCommentsById(review_id)
       .then((result) => {
-        console.log(result);
         setIsLoading(false);
         setComment(result);
       })
@@ -27,7 +26,11 @@ function Comments({ comment_count }) {
       <p className="font-bold uppercase ">{comment_count} Comments:</p>
       <div>
         {comment.map((comment) => (
-          <CommentCard comment={comment} />
+          <CommentCard
+            key={comment.comment_id}
+            setComment={setComment}
+            comment={comment}
+          />
         ))}
       </div>
     </div>

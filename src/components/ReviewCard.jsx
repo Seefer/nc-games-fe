@@ -24,7 +24,10 @@ function ReviewCard({ review }) {
             {`${review.review_body.slice(0, 150)}`}
             <strong>
               <Link to={`/reviews/${review.review_id}`}>
-                <span> ...Read Full Review</span>
+                <span className="hover:text-gray-400">
+                  {" "}
+                  ...Read Full Review
+                </span>
               </Link>
             </strong>
           </p>

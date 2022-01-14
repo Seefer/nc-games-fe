@@ -9,8 +9,6 @@ export const getUserName = async (username) => {
 
   // also consider:
   // const result = ncGamesAPI.get(`/users`, {params: { userName: username }});
-
-  console.log(result);
 };
 
 export const getReviews = async (category) => {
