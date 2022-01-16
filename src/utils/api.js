@@ -4,6 +4,10 @@ const ncGamesAPI = axios.create({
   baseURL: "https://nc-games-api-example.herokuapp.com/api",
 });
 
+export const userLogin = async (user) => {
+  return { username: "seefer", name: "Darren Evans", avatar_url: "😮" };
+};
+
 export const getUserName = async (username) => {
   const result = ncGamesAPI.get(`/users/${username}`);
 
@@ -11,8 +15,10 @@ export const getUserName = async (username) => {
   // const result = ncGamesAPI.get(`/users`, {params: { userName: username }});
 };
 
-export const getReviews = async (category) => {
-  const result = await ncGamesAPI.get(`/reviews`);
+export const getReviews = async (queries) => {
+  const result = await ncGamesAPI.get(`/reviews`, {
+    params: { ...queries },
+  });
   return result.data.reviews;
 };
 

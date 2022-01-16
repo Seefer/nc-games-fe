@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import { getCommentsById } from "../utils/api";
 import CommentCard from "./CommentCard";
 
-function Comments({ comment_count }) {
+const Comments = ({ comment_count }) => {
   const [comment, setComment] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const { review_id } = useParams();
 
@@ -18,6 +19,7 @@ function Comments({ comment_count }) {
       })
       .catch((err) => {
         console.log(err);
+        setIsError(true);
       });
   }, []);
 
@@ -26,15 +28,11 @@ function Comments({ comment_count }) {
       <p className="font-bold uppercase ">{comment_count} Comments:</p>
       <div>
         {comment.map((comment) => (
-          <CommentCard
-            key={comment.comment_id}
-            setComment={setComment}
-            comment={comment}
-          />
+          <CommentCard key={comment.comment_id} comment={comment} />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default Comments;

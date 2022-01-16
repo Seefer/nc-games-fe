@@ -1,7 +1,7 @@
 import React from "react";
 import { formatDate } from "../utils/formatDate";
 
-function CommentCard({ comment }) {
+const CommentCard = ({ comment }) => {
   return (
     <div className="p-2 m-1 mb-3 rounded-md bg-slate-300">
       <span className="italic font-normal">{comment.body}</span>
@@ -14,6 +14,6 @@ function CommentCard({ comment }) {
       <button>⬇️</button>
     </div>
   );
-}
+};
 
 export default CommentCard;

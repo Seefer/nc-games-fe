@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Header() {
+export const Header = () => {
   return (
     <div className="flex flex-col items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 sm:flex-row">
       <h1 className="justify-start text-xl font-bold text-gray-300 ">
@@ -17,6 +17,6 @@ function Header() {
       </span>
     </div>
   );
-}
+};
 
 export default Header;

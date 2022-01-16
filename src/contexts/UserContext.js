@@ -1,40 +1,32 @@
-import { createContext, useState } from "react";
-
-export const UserContext = createContext(null);
-
-export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-
-  const userLogin = (username) => {
-    setUser(username);
-
-    const userLogout = () => {
-      setUser(null);
-    };
-  };
-};
-
-/* 
-
-import { createContext, useState } from "react";
+import { useState, useEffect, createContext } from "react";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
+
+  useEffect(() => {
+    let username = localStorage.getItem("user");
+    if (!username) {
+      localStorage.setItem("user", "");
+      username = localStorage.getItem("user");
+    }
+    setUser(username);
+  }, []);
 
   const userLogin = (username) => {
     setUser(username);
+    localStorage.setItem("user", username);
   };
 
   const userLogout = () => {
-    setUser(null);
+    setUser("");
+    localStorage.setItem("user", "");
   };
 
   return (
-    <UserContext.Provider value={{ user, setUser, userLogin, userLogout }}>
+    <UserContext.Provider value={{ user, userLogin, userLogout }}>
       {children}
     </UserContext.Provider>
   );
 };
-*/

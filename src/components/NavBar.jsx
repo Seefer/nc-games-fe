@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NavBar() {
+const NavBar = () => {
   return (
-    <nav className="bg-slate-700 pt-2 pb-2">
+    <nav className="p-1 bg-slate-700">
       <ul className="flex">
         <li className="mr-6">
           <Link className="text-white hover:text-gray-400" to="/">
@@ -28,6 +28,6 @@ function NavBar() {
       </ul>
     </nav>
   );
-}
+};
 
 export default NavBar;

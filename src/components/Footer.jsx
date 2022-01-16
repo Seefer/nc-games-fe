@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className="flex flex-col items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 sm:flex-row">
       <Link
@@ -63,6 +63,6 @@ function Footer() {
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

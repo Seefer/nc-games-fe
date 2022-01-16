@@ -1,36 +1,28 @@
-import app from "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
-import Header from "./components/Header";
-import Nav from "./components/NavBar";
 import ReviewsList from "./components/ReviewsList";
 import Footer from "./components/Footer";
 import Review from "./components/Review";
-import Comments from "./components/Comments";
 import { UserContext } from "./contexts/UserContext";
 import FilterBar from "./components/FilterBar";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
+  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   return (
-    <UserContext.Provider value="">
+    <UserContext.Provider value={value}>
       <BrowserRouter>
         <div className="App">
           <Header />
-          <Nav />
+          <NavBar />
           <FilterBar />
           <Routes>
-            <Route path="/" element={<ReviewsList />} />
+            <Route path="/" exact element={<ReviewsList />} />
             <Route path="/reviews" element={<ReviewsList />} />
-            <Route
-              path="/reviews/:review_id"
-              element={
-                <>
-                  <Review />
-                </>
-              }
-            />
+            <Route path="/reviews/:review_id" element={<Review />} />
           </Routes>
           <Footer />
         </div>

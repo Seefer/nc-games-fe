@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { formatDate } from "../utils/formatDate";
 import UserProfile from "./UserProfile";
 
-function ReviewCard({ review }) {
+const ReviewCard = ({ review }) => {
   return (
     <div className="container">
       <div className="m-6 bg-gray-200 rounded shadow-md ">
@@ -20,17 +20,14 @@ function ReviewCard({ review }) {
           <p className="mt-0 mb-2 font-semibold ">
             Posted On: {formatDate(review.created_at)}
           </p>
-          <p className="text-base text-gray-700">
-            {`${review.review_body.slice(0, 150)}`}
+          <div className="text-base text-gray-700">
+            {`${review.review_body.slice(0, 150)} ...`}
             <strong>
               <Link to={`/reviews/${review.review_id}`}>
-                <span className="hover:text-gray-400">
-                  {" "}
-                  ...Read Full Review
-                </span>
+                <p className="hover:text-gray-400"> ...Read Full Review</p>
               </Link>
             </strong>
-          </p>
+          </div>
         </div>
         <div className="px-6 pt-4 pb-2">
           <span className="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-full">
@@ -46,6 +43,6 @@ function ReviewCard({ review }) {
       </div>
     </div>
   );
-}
+};
 
 export default ReviewCard;
